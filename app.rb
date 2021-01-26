@@ -12,6 +12,11 @@ class DiaryManager < Sinatra::Base
     'Hello world!'
   end
 
+  get '/diary' do
+    @diary_entries = Diary.all
+    erb(:diary)
+  end
+
   run! if app_file == $0
 
 end
